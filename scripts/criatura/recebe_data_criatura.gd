@@ -3,9 +3,7 @@ extends Node3D
 @export var CriaturaData: Criatura
 @onready var carregador_modelo3d: Node3D = $mesh
 
-func _ready() -> void:
-	if CriaturaData and CriaturaData.patch_modelo3D != "":
-		var modelo = load(CriaturaData.patch_modelo3D)
-		if modelo:
-			var instancia = modelo.instantiate()
-			carregador_modelo3d.add_child(instancia)
+func _ready():
+	if CriaturaData and CriaturaData.modelo3D:
+		var instancia = CriaturaData.modelo3D.instantiate()
+		carregador_modelo3d.add_child(instancia)

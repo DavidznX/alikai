@@ -2,7 +2,7 @@ extends Resource
 
 class_name Criatura
 
-@export var patch_modelo3D : String
+@export var modelo3D : PackedScene
 @export var SpriteIcon : Texture
 
 ##STATUS

@@ -2,7 +2,49 @@
 
 [ext_resource type="Script" uid="uid://04gipljsfbx" path="res://scripts/criatura/recebe_data_criatura.gd" id="1_eu4cx"]
 
+[sub_resource type="Animation" id="Animation_eu4cx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lvcyo"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gvlh0"]
+_data = {
+&"RESET": SubResource("Animation_eu4cx"),
+&"idle": SubResource("Animation_lvcyo")
+}
+
 [node name="base_criatura" type="Node3D" unique_id=2088408577]
 script = ExtResource("1_eu4cx")
 
 [node name="mesh" type="Node3D" parent="." unique_id=342561163]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1892680608]
+libraries/ = SubResource("AnimationLibrary_gvlh0")
+autoplay = &"idle"
