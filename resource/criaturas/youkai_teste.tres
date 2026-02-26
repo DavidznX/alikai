@@ -1,7 +1,19 @@
 [gd_resource type="Resource" script_class="Criatura" format=3 uid="uid://db652ijxr50u5"]
 
+[ext_resource type="Texture2D" uid="uid://3k68f0jctpm4" path="res://assets/moldels/criatura/teste_youkai_0.png" id="1_0o67n"]
 [ext_resource type="Script" uid="uid://4wdcrn3p2m3f" path="res://scripts/criatura/criatura_base.gd" id="1_3n0kc"]
+[ext_resource type="PackedScene" uid="uid://c2ps637j83i2" path="res://assets/moldels/criatura/teste_youkai.glb" id="2_ohhj8"]
 
 [resource]
 script = ExtResource("1_3n0kc")
+modelo3D = ExtResource("2_ohhj8")
+SpriteIcon = ExtResource("1_0o67n")
+nome = "Youkai Teste"
+id = 1
+vida_atual = 100
+vida_maxima = 100
+precisao = "5"
+velocidade = 5
+dano_base = 10
+octanara = 5
 metadata/_custom_type_script = "uid://4wdcrn3p2m3f"

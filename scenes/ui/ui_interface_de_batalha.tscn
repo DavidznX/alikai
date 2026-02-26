@@ -1,9 +1,80 @@
 [gd_scene format=3 uid="uid://beuvs5gg1vldf"]
 
-[node name="ui_interface_de_batalha" type="Control" unique_id=1421003218]
+[ext_resource type="Script" uid="uid://vsylw0d8wk86" path="res://scripts/ui/ui_interface_de_batalha.gd" id="1_ylm6j"]
+
+[node name="ui_batalha" type="CanvasLayer" unique_id=1655594152]
+script = ExtResource("1_ylm6j")
+
+[node name="ui_interface_de_batalha" type="Control" parent="." unique_id=1421003218]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ui_interface_de_batalha" unique_id=1800261105]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -138.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+color = Color(0, 0, 0, 0.5529412)
+
+[node name="menu" type="HBoxContainer" parent="ui_interface_de_batalha/ColorRect" unique_id=447092570]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ataque" type="Button" parent="ui_interface_de_batalha/ColorRect/menu" unique_id=1301045551]
+layout_mode = 2
+text = "ataque"
+
+[node name="mochila" type="Button" parent="ui_interface_de_batalha/ColorRect/menu" unique_id=1016996781]
+layout_mode = 2
+text = "mochila"
+
+[node name="run" type="Button" parent="ui_interface_de_batalha/ColorRect/menu" unique_id=1577820165]
+layout_mode = 2
+text = "correr"
+
+[node name="menu2" type="HBoxContainer" parent="ui_interface_de_batalha/ColorRect" unique_id=464995240]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="amigo 1" type="Button" parent="ui_interface_de_batalha/ColorRect/menu2" unique_id=1195364566]
+layout_mode = 2
+text = "Amigo 1
+"
+
+[node name="voce" type="Button" parent="ui_interface_de_batalha/ColorRect/menu2" unique_id=1734500922]
+layout_mode = 2
+text = "Voce"
+
+[node name="amigo 2" type="Button" parent="ui_interface_de_batalha/ColorRect/menu2" unique_id=1332920038]
+layout_mode = 2
+text = "Amigo 2"
+
+[node name="menu3" type="HBoxContainer" parent="ui_interface_de_batalha/ColorRect" unique_id=440300677]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ataque1" type="Button" parent="ui_interface_de_batalha/ColorRect/menu3" unique_id=1583277751]
+layout_mode = 2
+text = "ataque1"
+
+[node name="ataque2" type="Button" parent="ui_interface_de_batalha/ColorRect/menu3" unique_id=585667591]
+layout_mode = 2
+text = "ataque2"
+
+[node name="ataque3" type="Button" parent="ui_interface_de_batalha/ColorRect/menu3" unique_id=864579550]
+layout_mode = 2
+text = "ataque3	"

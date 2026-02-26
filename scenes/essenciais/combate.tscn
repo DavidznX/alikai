@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://iv0di1paci5t" path="res://scenes/criatura/base_criatura.tscn" id="1_6jjan"]
 [ext_resource type="Resource" uid="uid://b0ejwan2xixl0" path="res://resource/criaturas/alien_teste.tres" id="2_vnh73"]
+[ext_resource type="Resource" uid="uid://db652ijxr50u5" path="res://resource/criaturas/youkai_teste.tres" id="3_4rfos"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cb12b"]
 
@@ -21,11 +22,15 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("PlaneMesh_cb12b")
 
 [node name="base_criatura" parent="." unique_id=2088408577 instance=ExtResource("1_6jjan")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20861489, -0.46129873)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1969306, 0, 0)
 CriaturaData = ExtResource("2_vnh73")
 
+[node name="base_criatura2" parent="." unique_id=140723099 instance=ExtResource("1_6jjan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1218555, 0, 0)
+CriaturaData = ExtResource("3_4rfos")
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=785090116]
-transform = Transform3D(0.79939115, -0.25148776, 0.5456443, 0, 0.9081797, 0.4185805, -0.60081095, -0.33460954, 0.72599083, 0.89789283, 1.1335511, 1.7819694)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49104905, 2.0480316)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1729013711]
 environment = SubResource("Environment_8tb7g")
