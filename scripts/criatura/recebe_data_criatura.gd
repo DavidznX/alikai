@@ -1,11 +1,11 @@
 extends Node3D
 
-@export var teste: Criatura
+@export var CriaturaData: Criatura
+@onready var carregador_modelo3d: Node3D = $mesh
 
 func _ready() -> void:
-	pass
-
-
-
-func _process(delta: float) -> void:
-	pass
+	if CriaturaData and CriaturaData.patch_modelo3D != "":
+		var modelo = load(CriaturaData.patch_modelo3D)
+		if modelo:
+			var instancia = modelo.instantiate()
+			carregador_modelo3d.add_child(instancia)
