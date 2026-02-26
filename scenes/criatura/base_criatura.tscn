@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://iv0di1paci5t"]
+
+[ext_resource type="Script" uid="uid://04gipljsfbx" path="res://scripts/criatura/recebe_data_criatura.gd" id="1_eu4cx"]
+
+[node name="base_criatura" type="Node3D" unique_id=2088408577]
+script = ExtResource("1_eu4cx")
+
+[node name="mesh" type="Node3D" parent="." unique_id=342561163]
