@@ -30,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1218555, 0, 0)
 CriaturaData = ExtResource("3_4rfos")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=785090116]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49104905, 2.0480316)
+transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 1.736, 3.178)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1729013711]
 environment = SubResource("Environment_8tb7g")
