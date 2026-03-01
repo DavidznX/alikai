@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dadaouisxkbd1"]
+
+[ext_resource type="Script" uid="uid://cvsbovrt76qa5" path="res://scripts/world/generic_fight.gd" id="1_7tt7o"]
+[ext_resource type="Script" uid="uid://4wdcrn3p2m3f" path="res://scripts/criatura/criatura_base.gd" id="2_0jhug"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cb12b"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6jjan"]
+
+[sub_resource type="Sky" id="Sky_vnh73"]
+sky_material = SubResource("ProceduralSkyMaterial_6jjan")
+
+[sub_resource type="Environment" id="Environment_8tb7g"]
+background_mode = 2
+sky = SubResource("Sky_vnh73")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b05gj"]
+albedo_color = Color(0.39719284, 0.65737265, 0.42711097, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_b05gj"]
+material = SubResource("StandardMaterial3D_b05gj")
+top_radius = 5.0
+bottom_radius = 5.0
+
+[node name="fight_scene" type="Node3D" unique_id=1610155431 node_paths=PackedStringArray("friends_targets")]
+script = ExtResource("1_7tt7o")
+evil_alikais = Array[ExtResource("2_0jhug")]([null, null, null])
+friends_targets = [NodePath("target_alikai"), NodePath("target_alikai2"), NodePath("target_alikai3")]
+
+[node name="chao" type="MeshInstance3D" parent="." unique_id=2141843635]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("PlaneMesh_cb12b")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=785090116]
+transform = Transform3D(0.9351167, 0.12119141, -0.3329707, 7.3005677e-09, 0.9396926, 0.34202006, 0.35434002, -0.31982872, 0.87872225, -3.4237685, 2.594717, 7.8200274)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1729013711]
+environment = SubResource("Environment_8tb7g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1895295782]
+transform = Transform3D(1, 0, 0, 0, 0.6189569, 0.785425, 0, -0.785425, 0.6189569, 0, 13.2162285, 10.122764)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1324060405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0241373, 0)
+mesh = SubResource("CylinderMesh_b05gj")
+
+[node name="target_alikai" type="Marker3D" parent="." unique_id=1306864246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3168597, 0, -0.68841267)
+
+[node name="target_alikai2" type="Marker3D" parent="." unique_id=1374206692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5247488, 0, 0.48048687)
+
+[node name="target_alikai3" type="Marker3D" parent="." unique_id=400834052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72893214, 0, 3.0334797)
+
+[node name="target_alikai_evil" type="Marker3D" parent="." unique_id=1117154915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.422512, 0, 1.2054851)
+
+[node name="target_alikai_evil2" type="Marker3D" parent="." unique_id=2117326080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5442137, 0, -0.41270375)
+
+[node name="target_alikai_evil3" type="Marker3D" parent="." unique_id=1987119672]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5764129, 0, -3.3566566)

@@ -1,11 +1,12 @@
 extends Node3D
+class_name AlikaiNode
 
-@export var CriaturaData: Criatura
 @onready var carregador_modelo3d: Node3D = $mesh
+var alikai_resource:Alikai
 
 func _ready():
-	if CriaturaData and CriaturaData.modelo3D:
-		var instancia = CriaturaData.modelo3D.instantiate()
+	if alikai_resource and alikai_resource.modelo3D:
+		var instancia = alikai_resource.modelo3D.instantiate()
 		carregador_modelo3d.add_child(instancia)
 
 

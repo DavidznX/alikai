@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dsn65ky1fge55"]
+
+[ext_resource type="Script" uid="uid://cxm6tkvvy8u2c" path="res://scripts/player/player.gd" id="1_jlq1a"]
+[ext_resource type="Texture2D" uid="uid://bji1u37feqjl1" path="res://icon.svg" id="1_mbeca"]
+[ext_resource type="Script" uid="uid://t11hfwj48t0p" path="res://scripts/world/World_scr.gd" id="1_o3r3n"]
+[ext_resource type="Script" uid="uid://4wdcrn3p2m3f" path="res://scripts/criatura/criatura_base.gd" id="2_kxy21"]
+[ext_resource type="Script" uid="uid://dqpcce0rob4bg" path="res://scripts/saveSystem/InfoPlayer.gd" id="2_uxgo4"]
+[ext_resource type="Script" uid="uid://fvi8v4ouqgl8" path="res://scripts/especial_tiles/area_combat.gd" id="3_cm7k3"]
+[ext_resource type="Resource" uid="uid://b0ejwan2xixl0" path="res://resource/criaturas/alien_teste.tres" id="3_yu1jg"]
+
+[sub_resource type="Resource" id="Resource_kxy21"]
+script = ExtResource("2_uxgo4")
+aliKais = Array[ExtResource("2_kxy21")]([ExtResource("3_yu1jg"), ExtResource("3_yu1jg"), ExtResource("3_yu1jg")])
+equipped_alikais = Array[ExtResource("2_kxy21")]([ExtResource("3_yu1jg"), ExtResource("3_yu1jg"), ExtResource("3_yu1jg")])
+metadata/_custom_type_script = "uid://dqpcce0rob4bg"
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jlq1a"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_cm7k3"]
+sky_material = SubResource("ProceduralSkyMaterial_jlq1a")
+
+[sub_resource type="Environment" id="Environment_o3r3n"]
+background_mode = 2
+sky = SubResource("Sky_cm7k3")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ebvo4"]
+albedo_color = Color(0.21176471, 0.21176471, 0.22352941, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mbeca"]
+material = SubResource("StandardMaterial3D_ebvo4")
+size = Vector3(300, 1, 300)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cm7k3"]
+radius = 0.6352539
+
+[sub_resource type="BoxMesh" id="BoxMesh_o3r3n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cm7k3"]
+size = Vector3(10, 2, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3r3n"]
+albedo_color = Color(0.8235294, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uxgo4"]
+material = SubResource("StandardMaterial3D_o3r3n")
+size = Vector3(10, 1, 10)
+
+[node name="Maps" type="Node3D" unique_id=1253214005]
+script = ExtResource("1_o3r3n")
+debug_load = true
+info_player = SubResource("Resource_kxy21")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1562916562]
+environment = SubResource("Environment_o3r3n")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=319503129]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2061562957]
+mesh = SubResource("BoxMesh_mbeca")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=2035052101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7795146, 0)
+collision_layer = 4
+script = ExtResource("1_jlq1a")
+
+[node name="Sprite3D" type="Sprite3D" parent="Player" unique_id=1388672445]
+billboard = 2
+texture = ExtResource("1_mbeca")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=844495237]
+shape = SubResource("CapsuleShape3D_cm7k3")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=367730407]
+transform = Transform3D(1, 0, 0, 0, 0.9051241, 0.42514753, 0, -0.42514753, 0.9051241, 0, 2.769078, 7.0586786)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=61020665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9259906, 1.6766508, 0)
+mesh = SubResource("BoxMesh_o3r3n")
+
+[node name="Area_combat" type="Area3D" parent="." unique_id=1277114074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.714355, 0.49206448, 0)
+collision_mask = 4
+script = ExtResource("3_cm7k3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area_combat" unique_id=1505117085]
+shape = SubResource("BoxShape3D_cm7k3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area_combat" unique_id=661581366]
+mesh = SubResource("BoxMesh_uxgo4")

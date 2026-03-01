@@ -1,0 +1,350 @@
+[gd_scene format=3 uid="uid://pcwxft3n2dd1"]
+
+[ext_resource type="Script" path="res://scripts/menu/menu.gd" id="1_vpgfy"]
+[ext_resource type="FontFile" uid="uid://43814se2v5d0" path="res://PressStart2P-Regular.ttf" id="3_fapvr"]
+[ext_resource type="PackedScene" uid="uid://dsn65ky1fge55" path="res://scenes/Maps/Prototype_top_view.tscn" id="4_eheat"]
+
+[sub_resource type="Animation" id="Animation_ctkf8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(137, 495)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bro6f"]
+resource_name = "camera"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(137, 497), Vector2(137, -91)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 15, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(16),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["camera_2"],
+"method": &"camera_animation"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mbksb"]
+resource_name = "camera_2"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(137, 497), Vector2(1543, 497)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 15, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(16),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["camera"],
+"method": &"camera_animation"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mbksb"]
+_data = {
+&"RESET": SubResource("Animation_ctkf8"),
+&"camera": SubResource("Animation_bro6f"),
+&"camera_2": SubResource("Animation_mbksb")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_vpgfy"]
+font = ExtResource("3_fapvr")
+font_size = 64
+shadow_size = 0
+shadow_color = Color(0.77, 0.77, 0.77, 0.43137255)
+shadow_offset = Vector2(4, 4)
+stacked_outline_count = 1
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(8, 8)
+stacked_shadow_0/color = Color(0, 0, 0, 0.47058824)
+
+[sub_resource type="Animation" id="Animation_kdsmm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 328)]
+}
+
+[sub_resource type="Animation" id="Animation_fapvr"]
+resource_name = "wave"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Vector2(110, 68), Vector2(110, 30), Vector2(110, 68)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8lfl8"]
+_data = {
+&"RESET": SubResource("Animation_kdsmm"),
+&"wave": SubResource("Animation_fapvr")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpgfy"]
+bg_color = Color(0, 0, 0, 0.4745098)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 18
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eheat"]
+bg_color = Color(1, 1, 1, 0.4745098)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 18
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fapvr"]
+bg_color = Color(0, 0, 0, 0.4745098)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.45882353, 0, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 18
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kdsmm"]
+
+[node name="Menu" type="Control" unique_id=662833223]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vpgfy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=141331488]
+position = Vector2(137, 495)
+zoom = Vector2(7, 7)
+limit_left = -62
+limit_top = -179
+limit_right = 1630
+limit_bottom = 760
+editor_draw_limits = true
+
+[node name="Cenario" parent="." unique_id=235547944 instance=ExtResource("4_eheat")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=302287697]
+libraries/ = SubResource("AnimationLibrary_mbksb")
+autoplay = &"camera"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1731506936]
+
+[node name="ColorRect" type="ColorRect" parent="UI" unique_id=507804691]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Control" type="Control" parent="UI" unique_id=1165330165]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameName" type="Label" parent="UI/Control" unique_id=1094546714]
+modulate = Color(1, 1, 0.92156863, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = 4.0
+offset_right = 640.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "No Place for Honor"
+label_settings = SubResource("LabelSettings_vpgfy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Control/GameName" unique_id=1985352021]
+libraries/ = SubResource("AnimationLibrary_8lfl8")
+
+[node name="Box" type="Control" parent="UI/Control" unique_id=1100377554]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBox" type="HBoxContainer" parent="UI/Control/Box" unique_id=1099532135]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Play" type="Button" parent="UI/Control/Box/HBox" unique_id=1105482920]
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_fapvr")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_vpgfy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eheat")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fapvr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kdsmm")
+text = "Play Game"
+
+[node name="Settings" type="Button" parent="UI/Control/Box/HBox" unique_id=1168847163]
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_fapvr")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_vpgfy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eheat")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fapvr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kdsmm")
+text = "Settings"
+
+[node name="Credits" type="Button" parent="UI/Control/Box/HBox" unique_id=1544179276]
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_fapvr")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_vpgfy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eheat")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fapvr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kdsmm")
+text = "Credits"
+
+[node name="Quit" type="Button" parent="UI/Control/Box/HBox" unique_id=824947827]
+layout_mode = 2
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_fapvr")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_vpgfy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eheat")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fapvr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kdsmm")
+text = "Quit"

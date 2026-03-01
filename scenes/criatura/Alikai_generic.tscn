@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://iv0di1paci5t"]
+[gd_scene format=3 uid="uid://kh82a8w0kakv"]
 
-[ext_resource type="Script" uid="uid://04gipljsfbx" path="res://scripts/criatura/recebe_data_criatura.gd" id="1_eu4cx"]
+[ext_resource type="Script" uid="uid://04gipljsfbx" path="res://scripts/criatura/recebe_data_criatura.gd" id="1_1peoi"]
 
 [sub_resource type="Animation" id="Animation_eu4cx"]
 length = 0.001
@@ -44,7 +44,7 @@ _data = {
 radius = 0.7987932
 
 [node name="base_criatura" type="Node3D" unique_id=2088408577]
-script = ExtResource("1_eu4cx")
+script = ExtResource("1_1peoi")
 
 [node name="mesh" type="Node3D" parent="." unique_id=342561163]
 
