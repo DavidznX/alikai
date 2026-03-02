@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dkox7ylsry3ud"]
+
+[ext_resource type="Script" uid="uid://cxm6tkvvy8u2c" path="res://scripts/player/player.gd" id="1_rob7l"]
+[ext_resource type="Texture2D" uid="uid://bji1u37feqjl1" path="res://icon.svg" id="2_qxq1e"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rw5qr"]
+
+[sub_resource type="Sky" id="Sky_jkvk7"]
+sky_material = SubResource("ProceduralSkyMaterial_rw5qr")
+
+[sub_resource type="Environment" id="Environment_rob7l"]
+background_mode = 2
+sky = SubResource("Sky_jkvk7")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0j3gt"]
+radius = 0.6352539
+
+[node name="Floresta" type="Node3D" unique_id=135593957]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=375504876]
+environment = SubResource("Environment_rob7l")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=938217489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7795146, 0)
+collision_layer = 4
+script = ExtResource("1_rob7l")
+
+[node name="Sprite3D" type="Sprite3D" parent="Player" unique_id=1152643328]
+billboard = 2
+texture = ExtResource("2_qxq1e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=298637998]
+shape = SubResource("CapsuleShape3D_0j3gt")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=626311171]
+transform = Transform3D(1, 0, 0, 0, 0.9051241, 0.42514753, 0, -0.42514753, 0.9051241, 0, 2.769078, 7.0586786)
