@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ba02puavdqxxg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ua21x"]
+albedo_color = Color(2.815649e-06, 0.5381716, 0.1427438, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1e31i"]
+material = SubResource("StandardMaterial3D_ua21x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6cm3"]
+albedo_color = Color(1, 0.06216886, 0.18819651, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6cuo6"]
+material = SubResource("StandardMaterial3D_l6cm3")
+
+[node name="Alikai_diferenciado" type="Node3D" unique_id=1008285098]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1269813919]
+mesh = SubResource("CapsuleMesh_1e31i")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=873659339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9562738, 0)
+mesh = SubResource("BoxMesh_6cuo6")
