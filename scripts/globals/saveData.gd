@@ -1,8 +1,9 @@
 extends Node
 
 var equipped_alikais:Array[Alikai]
+var savePlayer:SaveInfoPlayer
 
 func _load_from_info(info:SaveInfoPlayer):
-	equipped_alikais = info.equipped_alikais
+	savePlayer = info
 	
 	print("carregado informações")

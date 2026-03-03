@@ -16,6 +16,4 @@ class_name Alikai
 @export var exp_: int
 @export var octanara: int
 
-@export var atack1:Resource
-@export var atack2:Resource
-@export var atack3:Resource
+@export var atacks:Array[AttackResource]
